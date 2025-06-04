@@ -24,10 +24,10 @@
 */
 
 mod lexing;
+mod lexer;
+mod token;
 
 // Importing the libaries
-
-use lexing::lexer::lexer;
 
 const PROGRAM: &str = "
 int x = 5;
@@ -41,6 +41,18 @@ if (z > 10) {
 }
 ";
 
+// Dummy implementation for demonstration.
+// Replace with your actual lexing logic.
+fn lex_program(_input: &str) -> Vec<String> {
+    vec!["TOKEN1".to_string(), "TOKEN2".to_string()]
+}
+
+// Dummy implementation for demonstration.
+// Replace with your actual string logic.
+fn string(input: &str) -> &str {
+    input
+}
+
 fn main()
 {
     let tokens = lex_program(PROGRAM);
@@ -53,4 +65,6 @@ fn main()
 
     let test_string = "****";
     println!("Result: {}", string(test_string));
+
+    lexer::do_lexing("Yes");
 }

@@ -1,5 +1,8 @@
 use regex::Regex;
-use crate::token::Token; // Adjust the path if Token is defined elsewhere
+use crate::token::
+{
+    Token, Tokenize
+};
 
 pub fn lexer(program: &str) -> Vec<Token>
 {

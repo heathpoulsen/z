@@ -21,6 +21,7 @@
 */
 
 // Allows us to print enum elements with println!() Without any extra effort
+
 #[derive(Debug)]
 
 pub enum Token
@@ -49,6 +50,9 @@ pub enum Token
     // Logical Operators
     GreaterThan(String),
     LessThan(String),
+
+    // Identifiers
+    Identifier(String),
 }
 
 // TRAITS TIME :D
@@ -85,26 +89,29 @@ impl Token
                     .to_string()
             ),
 
-            // Gets all of the letters, & all of the numbers
-            "Identifier" => r"[a-zA-Z_][a-zA-Z0-9_]*=",
+            "Identifier" => Token::Identifier(
+                value
+                    .unwrap()
+                    .to_string()
+            ),
 
-            "Plus" => r"\+",
+            "Plus" => Token::Plus("+".to_string()),
 
-            "Assign" => r"=",
+            "Assign" => Token::Assign("=".to_string()),
 
-            "Semicolon" => r";",
+            "Semicolon" => Token::Semicolon(";".to_string()),
 
-            "LeftParen" => r"\(",
+            "LeftParen" => Token::LeftParen("(".to_string()),
 
-            "RightParen" => r"/)",
+            "RightParen" => Token::RightParen(")".to_string()),
 
-            "LeftBrace" => r"\{",
+            "LeftBrace" => Token::LeftBrace("{".to_string()),
 
-            "RightBrace" => r"/}",
+            "RightBrace" => Token::RightBrace("}".to_string()),
 
-            "GreaterThan" => r">",
+            "GreaterThan" => Token::GreaterThan(">".to_string()),
 
-            "LessThan" => r"<",
+            "LessThan" => Token::LessThan("<".to_string()),
 
             // Fail-safe just in case none of the above matched
             _ => panic!("Unknown token type: {}", token_type),
