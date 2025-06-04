@@ -1,7 +1,10 @@
+// Importing the libaries
 use regex::Regex;
-use crate::token::
+
+// If this becomes Super, then it will cause an error
+use crate::lexing::token::
 {
-    Token, Tokenize
+    Token
 };
 
 pub fn lexer(program: &str) -> Vec<Token>
