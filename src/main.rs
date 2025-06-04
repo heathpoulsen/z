@@ -66,5 +66,5 @@ fn main()
     let test_string = "****";
     println!("Result: {}", string(test_string));
 
-    lexer::do_lexing("Yes");
+    lexer::do_lexing("Yes"); // do_lexing is an error message
 }

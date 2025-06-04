@@ -39,7 +39,7 @@ pub fn lexer(program: &str) -> Vec<Token>
         .iter()
     {
         // Get the regex for the token
-        let token_regex = Token::get_token_regex(token);
+        let token_regex = Token::get_token_regex(token); // get_token_regex is an error message
 
         // Initalize the regex object with the token regex string
         let re = Regex::new(token_regex.as_str()).unwrap();
