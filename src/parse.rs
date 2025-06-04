@@ -36,7 +36,7 @@ pub fn string(string: &str) -> bool
 }
 
 // Looks at one character and checks if it is a *
-fn unit(state: &mut State) -> Bool
+fn unit(state: &mut State) -> bool
 {
     match state
         .characters

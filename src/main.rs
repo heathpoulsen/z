@@ -21,8 +21,6 @@
     Quantifiers: These specify how many instances of a character or group are needed for a match. * matches zero or more, + matches one or more, ? matches zero or one, and {n}, {n,}, {n,m} are used for specific quantities.
 
     This syntax is usually the same for regex across any language, so this will apply to Rust, Python, or any other language. But theory can only take you so far, so let's start implementing the lexer and building regex for every keyword, identifier, operation etc.
-
-
 */
 
 mod lexing;
@@ -52,4 +50,7 @@ fn main()
     {
         println!("{:?}", token);
     }
+
+    let test_string = "****";
+    println!("Result: {}", string(test_string));
 }
